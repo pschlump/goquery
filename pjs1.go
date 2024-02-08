@@ -25,15 +25,3 @@ type Selection struct {
 func (s *Selection) GetRootNode() *html.Node {
 	return s.document.rootNode
 }
-
-/*
-CLI - Interpreter
-
->> read  file.html
->> get   url
->> .Find Pat
-	-> print out selection found
-
->> quit,:q,:wq,\q etc.
-
-*/
