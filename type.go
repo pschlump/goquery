@@ -49,6 +49,9 @@ func NewDocument(url string) (*Document, error) {
 // provided reader is never closed by this call. It is the responsibility
 // of the caller to close it if required.
 func NewDocumentFromReader(r io.Reader) (*Document, error) {
+	//	fmt.Printf("+--------------------------------------------------------------------------------------\n")
+	//	fmt.Printf("| My Modifyable version of goquery, in /Users/philip/go/src/github.com/pschlump/goquery\n")
+	//	fmt.Printf("+--------------------------------------------------------------------------------------\n\n")
 	root, e := html.Parse(r)
 	if e != nil {
 		return nil, e
@@ -131,8 +134,8 @@ type Matcher interface {
 //
 // For example, those two statements are semantically equivalent:
 //
-//     sel1 := doc.Find("a").First()
-//     sel2 := doc.FindMatcher(goquery.Single("a"))
+//	sel1 := doc.Find("a").First()
+//	sel2 := doc.FindMatcher(goquery.Single("a"))
 //
 // The one using Single is optimized to be potentially much faster on large
 // documents.
