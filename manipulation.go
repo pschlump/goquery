@@ -25,7 +25,7 @@ func (s *Selection) After(selector string) *Selection {
 //
 // This follows the same rules as Selection.Append.
 func (s *Selection) AfterMatcher(m Matcher) *Selection {
-	return s.AfterNodes(m.MatchAll(s.document.rootNode)...)
+	return s.AfterNodes(m.MatchAll(s.document.RootNode)...)
 }
 
 // AfterSelection inserts the elements in the selection after each element in the set of matched
@@ -80,7 +80,7 @@ func (s *Selection) Append(selector string) *Selection {
 //
 // This follows the same rules as Selection.Append.
 func (s *Selection) AppendMatcher(m Matcher) *Selection {
-	return s.AppendNodes(m.MatchAll(s.document.rootNode)...)
+	return s.AppendNodes(m.MatchAll(s.document.RootNode)...)
 }
 
 // AppendSelection appends the elements in the selection to the end of each element
@@ -120,7 +120,7 @@ func (s *Selection) Before(selector string) *Selection {
 //
 // This follows the same rules as Selection.Append.
 func (s *Selection) BeforeMatcher(m Matcher) *Selection {
-	return s.BeforeNodes(m.MatchAll(s.document.rootNode)...)
+	return s.BeforeNodes(m.MatchAll(s.document.RootNode)...)
 }
 
 // BeforeSelection inserts the elements in the selection before each element in the set of matched
@@ -189,7 +189,7 @@ func (s *Selection) Prepend(selector string) *Selection {
 //
 // This follows the same rules as Selection.Append.
 func (s *Selection) PrependMatcher(m Matcher) *Selection {
-	return s.PrependNodes(m.MatchAll(s.document.rootNode)...)
+	return s.PrependNodes(m.MatchAll(s.document.RootNode)...)
 }
 
 // PrependSelection prepends the elements in the selection to each element in
@@ -266,7 +266,7 @@ func (s *Selection) ReplaceWith(selector string) *Selection {
 //
 // This follows the same rules as Selection.Append.
 func (s *Selection) ReplaceWithMatcher(m Matcher) *Selection {
-	return s.ReplaceWithNodes(m.MatchAll(s.document.rootNode)...)
+	return s.ReplaceWithNodes(m.MatchAll(s.document.RootNode)...)
 }
 
 // ReplaceWithSelection replaces each element in the set of matched elements with
@@ -357,7 +357,7 @@ func (s *Selection) Wrap(selector string) *Selection {
 //
 // It returns the original set of elements.
 func (s *Selection) WrapMatcher(m Matcher) *Selection {
-	return s.wrapNodes(m.MatchAll(s.document.rootNode)...)
+	return s.wrapNodes(m.MatchAll(s.document.RootNode)...)
 }
 
 // WrapSelection wraps each element in the set of matched elements inside the
@@ -424,7 +424,7 @@ func (s *Selection) WrapAll(selector string) *Selection {
 //
 // It returns the original set of elements.
 func (s *Selection) WrapAllMatcher(m Matcher) *Selection {
-	return s.wrapAllNodes(m.MatchAll(s.document.rootNode)...)
+	return s.wrapAllNodes(m.MatchAll(s.document.RootNode)...)
 }
 
 // WrapAllSelection wraps a single HTML structure, the first node of the given
@@ -504,7 +504,7 @@ func (s *Selection) WrapInner(selector string) *Selection {
 //
 // It returns the original set of elements.
 func (s *Selection) WrapInnerMatcher(m Matcher) *Selection {
-	return s.wrapInnerNodes(m.MatchAll(s.document.rootNode)...)
+	return s.wrapInnerNodes(m.MatchAll(s.document.RootNode)...)
 }
 
 // WrapInnerSelection wraps an HTML structure, matched by the given selector,

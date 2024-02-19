@@ -7,7 +7,7 @@ import "golang.org/x/net/html"
 // The selector string is run in the context of the document of the current
 // Selection object.
 func (s *Selection) Add(selector string) *Selection {
-	return s.AddNodes(findWithMatcher([]*html.Node{s.document.rootNode}, compileMatcher(selector))...)
+	return s.AddNodes(findWithMatcher([]*html.Node{s.document.RootNode}, compileMatcher(selector))...)
 }
 
 // AddMatcher adds the matcher's matching nodes to those in the current
@@ -15,7 +15,7 @@ func (s *Selection) Add(selector string) *Selection {
 // The matcher is run in the context of the document of the current
 // Selection object.
 func (s *Selection) AddMatcher(m Matcher) *Selection {
-	return s.AddNodes(findWithMatcher([]*html.Node{s.document.rootNode}, m)...)
+	return s.AddNodes(findWithMatcher([]*html.Node{s.document.RootNode}, m)...)
 }
 
 // AddSelection adds the specified Selection object's nodes to those in the

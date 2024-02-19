@@ -18,7 +18,7 @@ import (
 type Document struct {
 	*Selection
 	Url      *url.URL
-	rootNode *html.Node
+	RootNode *html.Node
 }
 
 // NewDocumentFromNode is a Document constructor that takes a root html Node
@@ -85,7 +85,7 @@ func NewDocumentFromResponse(res *http.Response) (*Document, error) {
 
 // CloneDocument creates a deep-clone of a document.
 func CloneDocument(doc *Document) *Document {
-	return newDocument(cloneNode(doc.rootNode), doc.Url)
+	return newDocument(cloneNode(doc.RootNode), doc.Url)
 }
 
 // Private constructor, make sure all fields are correctly filled.

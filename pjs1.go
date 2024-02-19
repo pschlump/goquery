@@ -11,12 +11,12 @@ import (
 type Document struct {
 	*Selection
 	Url      *url.URL
-	rootNode *html.Node
+	RootNode *html.Node
 }
 */
 
 func (d *Document) GetRootNode() *html.Node {
-	return d.rootNode
+	return d.RootNode
 }
 
 /*
@@ -28,7 +28,7 @@ type Selection struct {
 */
 
 func (s *Selection) GetRootNode() *html.Node {
-	return s.document.rootNode
+	return s.document.RootNode
 }
 
 // Render renders the HTML of the first item in the selection and writes it to

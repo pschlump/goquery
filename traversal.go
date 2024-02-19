@@ -1,6 +1,9 @@
 package goquery
 
-import "golang.org/x/net/html"
+import (
+	"github.com/pschlump/dbgo"
+	"golang.org/x/net/html"
+)
 
 type siblingType int
 
@@ -368,6 +371,21 @@ func (s *Selection) PrevAllMatcher(m Matcher) *Selection {
 func (s *Selection) NextUntil(selector string) *Selection {
 	return pushStack(s, getSiblingNodes(s.Nodes, siblingNextUntil,
 		compileMatcher(selector), nil))
+}
+
+// NextUntilOrLast (PJS) gets all following siblings of each element up to but not
+// including the element matched by the selector. It returns a new Selection
+// object containing the matched elements.
+func (s *Selection) NextUntilOrLast(selector string) *Selection {
+	//return pushStack(s, getSiblingNodes(s.Nodes, siblingNextUntil,
+	//	compileMatcher(selector), nil))
+	v := getSiblingNodes(s.Nodes, siblingNextUntil, compileMatcher(selector), nil)
+	if len(v) == 0 {
+		dbgo.Printf("%(blue)getSiblingNodes length 0%(reset)\n")
+		// form: .Next() above, line:290
+		v = getSiblingNodes(s.Nodes, siblingNext, nil, nil)
+	}
+	return pushStack(s, v)
 }
 
 // NextUntilMatcher gets all following siblings of each element up to but not
