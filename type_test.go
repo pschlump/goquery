@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/andybalholm/cascadia"
+	"github.com/pschlump/cascadia"
 	"golang.org/x/net/html"
 )
 
